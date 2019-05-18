@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t arvini/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run arvini/docker-react npm run test -- --coverage
