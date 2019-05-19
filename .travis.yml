@@ -5,5 +5,18 @@ services:
 before_install:
   - docker build -t arvini/docker-react -f Dockerfile.dev .
 
-script:
-  - docker run arvini/docker-react npm test
+# script:
+#   - docker run arvini/docker-react npm run test -- --coverage
+
+# deploy:
+#   provider: elasticbeanstalk
+#   region: "us-west-2"
+#   app: "docker"
+#   env: "Dcoker-env"
+#   bucket_name: "elastic"
+#   bucket_path: "docker"
+#   on:
+#     branch: master
+#   access_key_id: $AWS_ACCESS_KEY
+#   secret_access_key:
+#     secure: "$AWS_SECRET_KEY"
